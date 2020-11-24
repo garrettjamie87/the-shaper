@@ -4,8 +4,8 @@ const Layout = require("./Layout");
 function Recommend(props) {
  return(
     <Layout>
-      <h1>Dashboard</h1>
-      <p>You have started a new session </p>
+    
+      <h1>These are what we recommend</h1>
       {props.boards.map((el, i) =>{
     return (
       <ol key={i}>

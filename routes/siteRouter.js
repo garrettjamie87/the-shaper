@@ -5,10 +5,16 @@ const isLoggedIn = require("../utils/isLoggedIn");
 const Surfboard = require("./../models/Surfboard.model");
 
 siteRouter.get("/selection", isLoggedIn, (req, res, next) => {
-  const { level } = req.session.currentUser;
-  Surfboard.find({level })
+  const {
+    level
+  } = req.session.currentUser;
+  Surfboard.find({
+      level
+    })
     .then((allSelectedboards) => {
-      const props = { boards: allSelectedboards };
+      const props = {
+        boards: allSelectedboards
+      };
       res.render("Recommend", props);
     })
     .catch((err) => console.log(err));
@@ -16,10 +22,12 @@ siteRouter.get("/selection", isLoggedIn, (req, res, next) => {
 
 
 siteRouter.get("/dashboard", isLoggedIn, (req, res, next) => {
-const currUser = req.session.currentUser._id;
+  const currUser = req.session.currentUser._id;
   User.findById(currUser)
     .then((user) => {
-      Surfboard.find({author: null}).then((surfboards) => {
+      Surfboard.find({
+        author: null
+      }).then((surfboards) => {
         res.render("Dashboard", {
           user,
           surfboards,
@@ -42,13 +50,15 @@ const currUser = req.session.currentUser._id;
 siteRouter.get("/create", (req, res, next) => {
   res.render("Create");
 });
-siteRouter.post("/create",  async (req, res, next) => {
+siteRouter.post("/create", async (req, res, next) => {
   try {
-    const { _id } = req.session.currentUser;
+    const {
+      _id
+    } = req.session.currentUser;
     console.log(_id);
-   const newBoard = await Surfboard.create({
+    const newBoard = await Surfboard.create({
       ...req.body,
-      author:_id
+      author: _id
     });
     console.log('newBoard', newBoard)
     res.redirect("/dashboard");
@@ -73,20 +83,18 @@ siteRouter.get("/:id/detail", isLoggedIn, function (req, res, next) {
 
 siteRouter.post("/:id", isLoggedIn, function (req, res, next) {
   const _id = req.session.currentUser._id;
-  const { id } = req.params;
-  User.updateOne(
-    {
+  const {
+    id
+  } = req.params;
+  User.updateOne({
       _id,
-    },
-    {
+    }, {
       $push: {
         surfboard: req.params.id,
       },
-    },
-    {
+    }, {
       new: true,
-    }
-  )
+    })
     .then((updatedUser) => {
       console.log(updatedUser);
       res.redirect("/order");

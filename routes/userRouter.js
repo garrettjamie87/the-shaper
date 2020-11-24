@@ -9,7 +9,11 @@ const Surfboard = require("./../models/Surfboard.model");
 //edit user
 //get profile here to render info of the user 
 
+userRouter.get('views/profile', isLoggedIn, (req, res, next) => {
+      res.render ("Profile")
+    });
 
+   
 
 
 userRouter.get('/edituser', isLoggedIn, (req, res, next) => {

@@ -5,7 +5,7 @@ function Dashboard(props) {
  return(
     <Layout>
       <h1>Dashboard</h1>
-      <p>WELCOME: {props.user.username}</p>
+      <p>{props.user.username}</p>
       <p>You have started a new session </p>
       {props.surfboards.map((el, i) =>{
     return (
@@ -17,7 +17,7 @@ function Dashboard(props) {
       <a href="/auth/logout">LOGOUT</a>
       <a href="/create">CREATE YOUR OWN</a>
       <button>
-      <a href="/Edituser">EDIT MY PROFILE</a>
+      <a href="/Profile">MY PROFILE</a>
       </button>
 
     </Layout>
