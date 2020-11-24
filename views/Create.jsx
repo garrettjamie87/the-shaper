@@ -71,7 +71,7 @@ function Create (props) {
 
 <br/> 
 
-      <button type="submit">volume</button>
+      <button type="submit">CREATE</button>
 
     </form>
     </Layout>

@@ -53,7 +53,7 @@ authRouter.post("/signup", (req, res, next) => {
     }).then((createdUser) => {
       req.session.currentUser = createdUser;
 
-      res.redirect("/dashboard");
+      res.redirect("/selection");
     });
   });
 });
@@ -98,7 +98,7 @@ authRouter.post("/login", (req, res, next) => {
       // Create the session - which also triggers the creation of the cookie
       req.session.currentUser = user;
 
-      res.redirect("/dashboard");
+      res.redirect("/selection");
     } else {
       res.render("Login", {
         errorMessage: "Incorrect password",

@@ -9,17 +9,17 @@ const React = require("react");
 function Edituser (props) {
       return(
     
-          <form action="/edit-user?user_id={user._id}" method="POST">
+          <form action="/edituser{user._id}" method="POST">
     
           <label>Username: </label>
           <br />
-          <input type="text" name="username"/>
+          <input type="text" name="username" value="{username}"/>
           <br />
     
     
           <label>Password: </label>
           <br />
-          <input type="password" name="password" />
+          <input type="password" name="password" value="{user.password}" />
           <br />
     
     

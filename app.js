@@ -9,6 +9,7 @@ const erv = require("express-react-views");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const authRouter = require("./routes/authRouter");
+const userRouter = require("./routes/userRouter")
 const siteRouter = require("./routes/siteRouter");
 const app = express();
 const DB_NAME = "TheShaper_DB";
@@ -53,6 +54,7 @@ app.use(
 
 // ROUTES
 app.use("/auth", authRouter);
+app.use("/user", userRouter)
 app.use("/", siteRouter);
 
 /* GET home page. */

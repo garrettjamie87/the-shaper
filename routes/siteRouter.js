@@ -4,13 +4,22 @@ const User = require("./../models/User.model");
 const isLoggedIn = require("../utils/isLoggedIn");
 const Surfboard = require("./../models/Surfboard.model");
 
+siteRouter.get("/selection", isLoggedIn, (req, res, next) => {
+  const { level } = req.session.currentUser;
+  Surfboard.find({level })
+    .then((allSelectedboards) => {
+      const props = { boards: allSelectedboards };
+      res.render("Recommend", props);
+    })
+    .catch((err) => console.log(err));
+});
+
 
 siteRouter.get("/dashboard", isLoggedIn, (req, res, next) => {
 const currUser = req.session.currentUser._id;
   User.findById(currUser)
     .then((user) => {
-      //console.log("user", user);
-      Surfboard.find().then((surfboards) => {
+      Surfboard.find({author: null}).then((surfboards) => {
         res.render("Dashboard", {
           user,
           surfboards,
@@ -50,7 +59,7 @@ siteRouter.post("/create",  async (req, res, next) => {
   }
 });
 
-
+//renders details page
 siteRouter.get("/:id/detail", isLoggedIn, function (req, res, next) {
   console.log(req.params.id);
   Surfboard.findById(req.params.id)
@@ -89,45 +98,6 @@ siteRouter.post("/:id", isLoggedIn, function (req, res, next) {
 siteRouter.get("/order", (req, res, next) => {
   res.render("Order");
 });
-
-
-
-siteRouter.get('/edituser', (req, res, next) => {
-  const userId = req.session.currentUser._id
-  User.findOne({ '_id': req.query.user_id })
-      .then((user) => {
-          res.render('Edituser', { user })
-      })
-      .catch((err) => {
-          console.log(err)
-          next(err)
-      })
-})
-
-siteRouter.post('/edituser', (req, res, next) => {
-
-  let userId = req.query.user_id;
-  
-
-
-  User.findById({ '_id': req.query.user_id })
-      .then(theUserProfile => {
-         
-          const { username, password, level, weight, height } = req.body;
-      
-      
-          User.update({ '_id': req.query.user_id }, userUpdated)
-              .then(() => User.findById(userId))
-              .then(userUpdated => {
-
-                  res.redirect(`/profile/${userId}`);
-              })
-              .catch(error => console.log(error));
-      });
-});
-
-
-
 
 
 
