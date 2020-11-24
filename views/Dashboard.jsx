@@ -15,7 +15,7 @@ function Dashboard(props) {
       <h1>Dashboard</h1>
       <p>WELCOME: {props.user.username}</p>
       <p>You have started a new session </p>
-{surfboards}
+{surfboards}//if statment for null
       <a href="/auth/logout">LOGOUT</a>
       <a href="/create">CREATE YOUR OWN</a>
 

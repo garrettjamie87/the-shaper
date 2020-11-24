@@ -1,6 +1,7 @@
 const React = require("react");
 
 
+
 <h2>Edit Profile</h2>
 
       
@@ -12,13 +13,13 @@ function Edituser (props) {
     
           <label>Username: </label>
           <br />
-          <input type="text" name="username" value="{user.username}" />
+          <input type="text" name="username"/>
           <br />
     
     
           <label>Password: </label>
           <br />
-          <input type="password" name="password" value="{user.password}" />
+          <input type="password" name="password" />
           <br />
     
     
@@ -44,7 +45,7 @@ function Edituser (props) {
     <br/>
          
     <label for='height'>Choose Your Height: </label>
-          <select id="height" name="height" value="{{user.height}}">
+          <select id="height" name="height" value="{user.height}">
           <option value="I'm above 160">"I'm above 160"</option>
           <option value="I'm above 170">"I'm above 170"</option>
           <option value="I'm above 180">"I'm above 180"</option>
