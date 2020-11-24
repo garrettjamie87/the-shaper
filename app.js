@@ -16,7 +16,7 @@ const DB_NAME = "TheShaper_DB";
 
 // DB CONNECTION
 mongoose
-  .connect(`mongodb://localhost:27017/${DB_NAME}`, {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
