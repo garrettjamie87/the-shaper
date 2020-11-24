@@ -1,0 +1,112 @@
+body {
+  background-color: #ECECEC;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+/*Login Icon*/
+input[type="checkbox"] {
+  height: 60px;
+  width: 60px;
+  -webkit-appearance: none;
+  box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.5),
+    2px 2px 2px rgba(0, 70, 70, 0.12);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 8%;
+  left: 4%;
+  border-radius: 50%;
+  border: 5px solid #ECECEC;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+input[type="checkbox"]:after {
+  font-family: FontAwesome;
+  content: "\f007";
+  color: #A5A3A3;
+  font-size: 25px;
+}
+input[type="checkbox"]:checked {
+  box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.5),
+    2px 2px 2px rgba(0, 70, 70, 0.12),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.5),
+    inset 5px 5px 10px rgba(0, 70, 70, 0.12);
+}
+/*73C6C6*/
+input[type="checkbox"]:checked:after {
+  color: #73C6C6;
+}
+/* MENU ----------------------------------*/
+.nav-bar {
+  padding: 14px 14px 0px 14px;
+  background-color: #ECECEC;
+}
+.nav-bar a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.6em;
+  margin: 20px;
+}
+.nav-bar-ul {
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+  margin: 48px 40px -132px auto;
+}
+.nav-bar-ul li {
+  list-style-type: none;
+  text-align: center;
+  margin: 20px;
+  background-color: #73C6C6;
+}
+/*LOGO*/
+.el2 {
+  width: 300px;
+  position: absolute;
+  top: 12px;
+  left: 42%;
+  z-index: 100;
+}
+header {
+  position: relative;
+  top: 161px;
+}
+#Surfboards {
+  height: 2000px;
+}
+.banner {
+  height: 500px;
+  background-color: rgb(224, 220, 220);
+}
+footer {
+  height: 500px;
+  background-color: #977956;
+}
+.map {
+  margin: 75px auto auto 1100px;
+  width: 720px;
+  height: 350px;
+}
+.bottomButton {
+  width: auto;
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
+  flex-direction: row;
+  margin-bottom: 0;
+}
+.arrow{
+  position: fixed;
+  bottom: 20px;
+  margin: auto;
+  border-right: 20px solid transparent;
+  border-top: 30px solid transparent;
+  border-left: 20px solid transparent;
+  border-bottom: 30px solid  #73C6C6;;
+}
+}
