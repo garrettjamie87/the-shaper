@@ -2,14 +2,14 @@ const React = require("react");
 
 
 
-<h2>Edit Profile</h2>
+
 
       
 
 function Edituser (props) {
       return(
-    
-          <form action={`/private/edit-user?user_id=${props.user._id}`}>
+         
+          <form action={"/user/edituser"} method="POST">
     
           <label>Username: </label>
           <br />
@@ -17,10 +17,7 @@ function Edituser (props) {
           <br />
     
     
-          <label>Password: </label>
-          <br />
-          <input type="password" name="password" value={props.user.password} />
-          <br />
+       
     
     
     

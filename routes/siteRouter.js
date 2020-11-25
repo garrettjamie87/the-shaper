@@ -28,6 +28,7 @@ siteRouter.get("/dashboard", isLoggedIn, (req, res, next) => {
       Surfboard.find({
         author: null
       }).then((surfboards) => {
+        console.log(surfboards);
         res.render("Dashboard", {
           user,
           surfboards,

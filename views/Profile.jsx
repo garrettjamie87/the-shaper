@@ -3,7 +3,7 @@ const Layout = require('./Layout');
 
 
 function Profile (props) {
-  const url = "user/edituser/?user_id=" + props.user.id
+  
   return(
   
 <Layout>
@@ -22,7 +22,7 @@ function Profile (props) {
 
 </ol>
 <button>
-<a href = {url}> 
+<a href = "/user/edituser"> 
 Edit my profile</a>
 </button>
     </Layout>
