@@ -1,12 +1,18 @@
 const React = require('react');
 
-<link rel="stylesheet" type="text/css" href="homePage.css"></link>    
 
 
 function Signup (props) {
   return(
-     
-      <form action="/auth/signup" method="POST" className="sign-up-form">
+      <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+      </head>
+
+<div className='sign-up-form'>
+<h1>SIGN UP</h1>
+      <form action="/auth/signup" method="POST">
 
       <label>Username: </label>
       <br />
@@ -21,7 +27,7 @@ function Signup (props) {
 
 
 
-<label for='level'>Choose Your Level: </label>
+<label for='level'>Choose Your Level: </label><br />
       <select id="level" name="level">
       <option value="SchoolBoy">'SchoolBoy'</option>
       <option value="Happy Medium">'Happy Medium'</option>
@@ -31,7 +37,7 @@ function Signup (props) {
  
     
  
-      <label for='weight'>Choose Your Weight: </label>
+      <label for='weight'>Choose Your Weight: </label><br />
       <select id="weight" name="weight">
       <option value="60-70">60-70</option>
       <option value="70-80">70-80</option>
@@ -41,7 +47,7 @@ function Signup (props) {
 
 <br/>
      
-<label for='height'>Choose Your Height: </label>
+<label for='height'>Choose Your Height: </label><br />
       <select id="height" name="height">
       <option value="I'm above 160">"I'm above 160"</option>
       <option value="I'm above 170">"I'm above 170"</option>
@@ -62,7 +68,8 @@ function Signup (props) {
         Already have an account? <a href="/auth/login">Login</a>
       </p>
     </form>
-
+    </div>
+</html>
 )}
         
 
