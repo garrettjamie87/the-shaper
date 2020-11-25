@@ -9,6 +9,8 @@ function Layout(props) {
         <link rel="stylesheet" href="/stylesheets/style.css" />
       </head>
 
+      //navbar here
+
       <body>{props.children}
       
       
@@ -16,6 +18,8 @@ function Layout(props) {
       
       
       </body>
+
+      //scripts for bootstarpp
     </html>
   );
 }

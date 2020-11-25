@@ -1,22 +1,29 @@
 const React = require("react");
-const Layout = require("./Layout");
 
 function Home() {
   return (
-    <Layout title="Home Page">
-      <h1>Home Page</h1>
+
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+      </head>
+
+<div className='homepage'>
+   <div className='form-info'>
+    <h1>Home Page</h1>
       
-      <a href="/auth/signup"
-              className="signup-button">
-      <button>Signup</button>
+      <a href="/auth/signup">
+      <button className="sign-up-button-home">Signup</button>
             </a>
 
-            <a href="./auth/login"
-              className="login-button">
-      <button>Login</button>
+            <a href="./auth/login">
+      <button className="log-in-button-home">Login</button>
+      
             </a>
-
-    </Layout>
+            </div>
+</div>
+</html>
   );
 }
 

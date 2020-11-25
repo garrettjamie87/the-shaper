@@ -11,6 +11,8 @@ function Signup (props) {
       </head>
 
 <div className='sign-up-form'>
+<div className='form-info'>
+
 <h1>SIGN UP</h1>
       <form action="/auth/signup" method="POST">
 
@@ -57,7 +59,7 @@ function Signup (props) {
 
 <br/> 
 
-      <button type="submit">Sign Up</button>
+      <button className="sign-up-button" type="submit">Sign Up</button>
 
       {
           props.errorMessage 
@@ -68,6 +70,7 @@ function Signup (props) {
         Already have an account? <a href="/auth/login">Login</a>
       </p>
     </form>
+    </div>
     </div>
 </html>
 )}

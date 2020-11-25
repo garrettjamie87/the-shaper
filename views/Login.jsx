@@ -1,21 +1,29 @@
 const React = require('react');
-const Layout = require('./Layout');
 
 
 function Login (props) {
   return(
-    <Layout>
-      <form id="form" action="/auth/login" method="POST">
+     <html lang="en">
+     <head>
+     <meta charSet="utf-8" />
+     <link rel="stylesheet" href="/stylesheets/style.css" />
+     </head>
+
+<div className='login-form'>
+<div className='form-info'>
+<h1>LOG IN</h1>
+     
+      <form action="/auth/login" method="POST">
         <label>Username</label>
         <br />
-        <input type="text" name="username" placeholder="Your username" />
+        <input type="text" name="username" placeholder="Your username" /><br/>
 
         <label>Password</label>
         <br />
-        <input type="password" name="password" />
+        <input type="password" name="password" /><br/>
 
-        <button type="submit">Login</button>
-      </form>
+        <button className='log-in-button' type="submit">Login</button>
+      
 
       {
         props.errorMessage 
@@ -26,9 +34,12 @@ function Login (props) {
       <p className="account-message">
         Don't have an account? <a href="/auth/signup">Sign up</a>
       </p>
-    </Layout>
-  )
-}
+    </form>
+    </div>
+    </div>
+    </html>
+  )}
+
 
 
 module.exports = Login;
