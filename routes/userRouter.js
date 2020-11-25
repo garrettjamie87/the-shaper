@@ -5,15 +5,18 @@ const isLoggedIn = require("../utils/isLoggedIn");
 const Surfboard = require("./../models/Surfboard.model");
 
 
-
-//edit user
-//get profile here to render info of the user 
-
-userRouter.get('views/profile', isLoggedIn, (req, res, next) => {
-      res.render ("Profile")
-    });
-
-   
+    userRouter.get('/profile', isLoggedIn, (req, res, next) => {
+      const currUser = req.session.currentUser._id;
+      User.findOne({ '_id': currUser })
+          .then((user) => {
+                console.log(user)
+              res.render('Profile', { user })
+          })
+          .catch((err) => {
+              console.log(err)
+              next(err)
+          })
+    })
 
 
 userRouter.get('/edituser', isLoggedIn, (req, res, next) => {
@@ -25,8 +28,8 @@ userRouter.get('/edituser', isLoggedIn, (req, res, next) => {
           .catch((err) => {
               console.log(err)
               next(err)
-          })
-    })
+          });
+    });
     
     userRouter.post('/edituser', isLoggedIn, (req, res, next) => {
           

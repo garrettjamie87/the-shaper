@@ -11,6 +11,8 @@ const MongoStore = require("connect-mongo")(session);
 const authRouter = require("./routes/authRouter");
 const userRouter = require("./routes/userRouter")
 const siteRouter = require("./routes/siteRouter");
+const profileRouter = require("./routes/profileRouter");
+
 const app = express();
 const DB_NAME = "TheShaper_DB";
 
@@ -54,7 +56,9 @@ app.use(
 
 // ROUTES
 app.use("/auth", authRouter);
-app.use("/user", userRouter)
+app.use("/user", userRouter);
+app.use("/profile", profileRouter)
+
 app.use("/", siteRouter);
 
 /* GET home page. */

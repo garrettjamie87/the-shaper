@@ -56,7 +56,7 @@ authRouter.post("/signup", (req, res, next) => {
       res.redirect("/selection");
     });
   });
-});
+}); 
 
 /*************************************LOGIN ROUTE *********************************************/
 

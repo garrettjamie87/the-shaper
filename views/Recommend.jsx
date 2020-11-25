@@ -6,7 +6,7 @@ function Recommend(props) {
     <Layout>
     
       <h1>These are what we recommend</h1>
-      {props.boards.map((el, i) =>{
+      {props.boards.map((el, i) => {
     return (
       <ol key={i}>
 <a href = {`/${el._id}/detail`}>{el.name}</a>

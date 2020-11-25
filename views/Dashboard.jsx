@@ -2,17 +2,18 @@ const React = require("react");
 const Layout = require("./Layout");
 
 function Dashboard(props) {
- return(
+ 
+  return(
     <Layout>
-      <h1>Dashboard</h1>
+      <h1>Our Boards</h1>
       <p>{props.user.username}</p>
       <p>You have started a new session </p>
       {props.surfboards.map((el, i) =>{
-    return (
+    
       <ol key={i}>
 <a href = {`/${el._id}/detail`}>{el.name}</a>
 </ol>
-    )
+    
   })}
       <a href="/auth/logout">LOGOUT</a>
       <a href="/create">CREATE YOUR OWN</a>

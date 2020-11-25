@@ -1,10 +1,12 @@
 const React = require('react');
 
+<link rel="stylesheet" type="text/css" href="homePage.css"></link>    
+
 
 function Signup (props) {
   return(
-
-      <form action="/auth/signup" method="POST">
+     
+      <form action="/auth/signup" method="POST" className="sign-up-form">
 
       <label>Username: </label>
       <br />
@@ -56,7 +58,9 @@ function Signup (props) {
             ? <div className="error-message"> {props.errorMessage} </div>
             : null
         }
-
+        <p className="account-message">
+        Already have an account? <a href="/auth/login">Login</a>
+      </p>
     </form>
 
 )}

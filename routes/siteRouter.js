@@ -38,13 +38,7 @@ siteRouter.get("/dashboard", isLoggedIn, (req, res, next) => {
       console.log(error);
     });
 });
-// siteRouter.get("/private", isLoggedIn, (req, res, next) => {
-//   const userIsLoggedIn = Boolean(req.session.currentUser);
-//   const props = {
-//     userIsLoggedIn
-//   };
-//   res.render("Private", props);
-// });
+
 
 //create a new board
 siteRouter.get("/create", (req, res, next) => {
