@@ -9,16 +9,18 @@ function Dashboard(props) {
       <p>{props.user.username}</p>
       <p>You have started a new session </p>
       {props.surfboards.map((el, i) =>{
-    
+    return (
       <ol key={i}>
 <a href = {`/${el._id}/detail`}>{el.name}</a>
 </ol>
+
+    )
     
   })}
       <a href="/auth/logout">LOGOUT</a>
       <a href="/create">CREATE YOUR OWN</a>
       <button>
-      <a href="/Profile">MY PROFILE</a>
+      <a href="/user/profile">MY PROFILE</a>
       </button>
 
     </Layout>

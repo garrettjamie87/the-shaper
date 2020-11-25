@@ -21,7 +21,8 @@ const Surfboard = require("./../models/Surfboard.model");
 
 userRouter.get('/edituser', isLoggedIn, (req, res, next) => {
       const currUser = req.session.currentUser._id;
-      User.findOne({ '_id': req.query.user_id })
+      console.log(currUser);
+      User.findById(currUser )
           .then((user) => {
               res.render('Edituser', { user })
           })
@@ -32,23 +33,20 @@ userRouter.get('/edituser', isLoggedIn, (req, res, next) => {
     });
     
     userRouter.post('/edituser', isLoggedIn, (req, res, next) => {
-          
-      const { username, password, level, weight, height } = req.body;
-      let userId = req.query.user_id;
+        const currUser = req.session.currentUser._id;  
+      const { username, level, weight, height } = req.body;
       
-      User.findById({ '_id': req.query.user_id })
-          .then(currentUser => {
+      
+      User.findByIdAndUpdate(currUser,{username, level, weight, height},{new:true})
+          .then(updatedUser => {
+             console.log("Updated User",updatedUser)
+            res.redirect("/dashboard")
              
-          
-          
-              User.update({ '_id': req.query.user_id }, userUpdated)
-                  .then(() => User.findById(userId))
-                  .then(userUpdated => {
-    
-                      res.redirect(`/dashboard/${userId}`);
-                  })
-                  .catch(error => console.log(error));
-          });
+          })
+          .catch((err) => {
+            console.log(err)
+            next(err)
+        });
     });
 
 module.exports = userRouter;
