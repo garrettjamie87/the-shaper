@@ -1,84 +1,71 @@
-const React = require('react');
+const React = require("react");
 const Layout = require("./Layout");
 
-
-function Create (props) {
-  return(
-    
+function Create(props) {
+  return (
     <Layout>
+      <form action="/create" method="POST">
+        <input type="text" name="name" />
 
-<form action="/create" method="POST">
+        <label for="color">color: </label>
+        <select id="color" name="color">
+          <option value="yellow">'yellow'</option>
+          <option value="white">'white'</option>
+          <option value="black">'black'</option>
+        </select>
+        <br />
 
-<label for='color'>color: </label>
-      <select id="color" name="color">
-      <option value="yellow">'yellow'</option>
-      <option value="white">'white'</option>
-      <option value="black">'black'</option>
-      </select>
-<br/>
- 
-    
- 
-      <label for='height'>height </label>
-      <select id="height" name="height">
-      <option value="option1">option1</option>
-      <option value="option2">option2</option>
-      <option value="option3">option3</option>
-      </select>
+        <label for="height">height </label>
+        <select id="height" name="height">
+          <option value="option1">option1</option>
+          <option value="option2">option2</option>
+          <option value="option3">option3</option>
+        </select>
 
-<br/>
-     
-<label for='width'>width: </label>
-      <select id="width" name="width">
-      <option value="width">"One width to rule them all"</option>
-      
-      </select>
+        <br />
 
-<br/> 
+        <label for="width">width: </label>
+        <select id="width" name="width">
+          <option value="width">"One width to rule them all"</option>
+        </select>
 
-<label for='thickness'>thickness </label>
-      <select id="thickness" name="thickness">
-      <option value="thickness">"thickShit"</option>
-      
-      </select>
+        <br />
 
-<br/> 
+        <label for="thickness">thickness </label>
+        <select id="thickness" name="thickness">
+          <option value="thickness">"thickShit"</option>
+        </select>
 
-<label for='volume'>volume: </label>
-      <select id="volume" name="volume">
-      <option value="volume">"I'm above 160"</option>
-      
-      </select>
+        <br />
 
-<br/> 
+        <label for="volume">volume: </label>
+        <select id="volume" name="volume">
+          <option value="volume">"I'm above 160"</option>
+        </select>
 
-<label for='noseShape'>noseShape: </label>
-      <select id="noseShape" name="noseShape">
-      <option value="rounded">"rounded"</option>
-      <option value="pointed">"pointed"</option>
-      
-      </select>
+        <br />
 
-<br/> 
+        <label for="noseShape">noseShape: </label>
+        <select id="noseShape" name="noseShape">
+          <option value="rounded">"rounded"</option>
+          <option value="pointed">"pointed"</option>
+        </select>
 
-<label for='taleShape'>taleShape: </label>
-      <select id="taleShape" name="name">
-      <option value="rounded">"rounded"</option>
-      <option value="square">"square"</option>
-      <option value="triangle">"triangle"</option>
+        <br />
 
-      </select>
+        <label for="taleShape">taleShape: </label>
+        <select id="taleShape" name="taleShape">
+          <option value="rounded">"rounded"</option>
+          <option value="square">"square"</option>
+          <option value="triangle">"triangle"</option>
+        </select>
 
-<br/> 
+        <br />
 
-      <button type="submit">CREATE</button>
-
-    </form>
+        <button type="submit">CREATE</button>
+      </form>
     </Layout>
-
-    
-  )
+  );
 }
-
 
 module.exports = Create;

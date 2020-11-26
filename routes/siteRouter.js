@@ -5,29 +5,24 @@ const isLoggedIn = require("../utils/isLoggedIn");
 const Surfboard = require("./../models/Surfboard.model");
 
 siteRouter.get("/selection", isLoggedIn, (req, res, next) => {
-  const {
-    level
-  } = req.session.currentUser;
+  const { level } = req.session.currentUser;
   Surfboard.find({
-      level
-    })
+    level,
+  })
     .then((allSelectedboards) => {
       const props = {
-        boards: allSelectedboards
+        boards: allSelectedboards,
       };
       res.render("Recommend", props);
     })
     .catch((err) => console.log(err));
 });
 
-
 siteRouter.get("/dashboard", isLoggedIn, (req, res, next) => {
   const currUser = req.session.currentUser._id;
   User.findById(currUser)
     .then((user) => {
-      Surfboard.find({
-        author: null
-      }).then((surfboards) => {
+      Surfboard.find({ author: null }).then((surfboards) => {
         console.log(surfboards);
         res.render("Dashboard", {
           user,
@@ -40,56 +35,100 @@ siteRouter.get("/dashboard", isLoggedIn, (req, res, next) => {
     });
 });
 
-
 //create a new board
 siteRouter.get("/create", (req, res, next) => {
   res.render("Create");
 });
-siteRouter.post("/create", async (req, res, next) => {
-  try {
-    const {
-      _id
-    } = req.session.currentUser;
-    console.log(_id);
-    const newBoard = await Surfboard.create({
-      ...req.body,
-      author: _id
+siteRouter.post("/create", isLoggedIn, (req, res, next) => {
+  const _id = req.session.currentUser._id;
+
+  const {
+    description,
+    color,
+    height,
+    width,
+    thickness,
+    volume,
+    noseShape,
+    taleShape,
+    name,
+  } = req.body;
+
+  Surfboard.create({
+    author: _id,
+    description,
+    color,
+    height,
+    width,
+    thickness,
+    volume,
+    noseShape,
+    taleShape,
+    name,
+  })
+    .then((newBoard) => {
+      console.log("newBoard", newBoard);
+      User.findByIdAndUpdate(_id, { $push: { surfboard: newBoard._id } }).then(
+        () => {
+          res.redirect("/dashboard");
+        }
+      );
+    })
+    .catch((error) => {
+      console.log(error);
+      next(error);
     });
-    console.log('newBoard', newBoard)
-    res.redirect("/dashboard");
-  } catch (error) {
-    console.log(error);
-    next(error);
-    return;
-  }
 });
 
 //renders details page
-siteRouter.get("/:id/detail", isLoggedIn, function (req, res, next) {
+siteRouter.get("/detail/:surfboardId", isLoggedIn, function (req, res, next) {
   console.log(req.params.id);
-  Surfboard.findById(req.params.id)
-    .then((el) => {
-      res.render("Detail", el);
+
+  const userId = req.session.currentUser._id;
+
+  Surfboard.findById(req.params.surfboardId)
+    .then((surfboard) => {
+      console.log("*****", surfboard);
+
+      User.findById(userId).then((user) => {
+        const props = {
+          surfboard: surfboard,
+          user: user,
+        };
+        res.render("Detail", props);
+      });
     })
     .catch((error) => {
       console.log(error);
     });
 });
 
+siteRouter.get("/deletepost/:postId", isLoggedIn, (req, res, next) => {
+  const postId = req.params.postId;
+  Surfboard.findByIdAndDelete(postId)
+    .then((post) => {
+      res.redirect("/user/profile");
+    })
+    .catch((err) => console.log(error));
+});
+
 siteRouter.post("/:id", isLoggedIn, function (req, res, next) {
   const _id = req.session.currentUser._id;
-  const {
-    id
-  } = req.params;
-  User.updateOne({
+  const { id } = req.params;
+
+  User.updateOne(
+    {
       _id,
-    }, {
+    },
+    {
       $push: {
         surfboard: req.params.id,
       },
-    }, {
+    },
+    {
       new: true,
-    })
+    }
+  )
     .then((updatedUser) => {
       console.log(updatedUser);
       res.redirect("/order");
@@ -101,8 +140,5 @@ siteRouter.post("/:id", isLoggedIn, function (req, res, next) {
 siteRouter.get("/order", (req, res, next) => {
   res.render("Order");
 });
-
-
-
 
 module.exports = siteRouter;
