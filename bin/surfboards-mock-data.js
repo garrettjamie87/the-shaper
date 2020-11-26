@@ -12,8 +12,7 @@ const surfboards = [
        taleShape: "rounded",
        level: "Absolute-boss",
        name: "Juanito",
-       url:'https://res.cloudinary.com/dh2ungc1o/image/upload/v1606131648/moderrn-retro-longboard-noserider-single-green_gsbtbj.jpg'
-
+       url: "/public/images/Razor-6ft6-matt-blue-fish.jpg"
      },
    
      {

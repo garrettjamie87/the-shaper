@@ -1,4 +1,25 @@
+body{
+  font-family: 'Courier New', Courier, monospace; 
+
+}
+
 .sign-up-form{
+  background-color: rgb(213, 209, 209); 
+  background-image: url("./../images/logo.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  padding-top: 50px;
+  height: 1000px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 200%;
+  font-family: 'Courier New', Courier, monospace; 
+  
+}
+
+
+.login-form{
+  
   background-color: rgb(213, 209, 209); 
   background-image: url("./../images/logo.png");
   background-repeat: no-repeat;
@@ -8,9 +29,66 @@
   text-align: center;
   font-size: 20px;
   line-height: 200%;
-  font-family: 'Courier New', Courier, monospace  
-};
+  font-family: 'Courier New', Courier, monospace; 
+  }
 
-.input{
-  
-}
+  .homepage{
+    background-color: rgb(213, 209, 209); 
+    background-image: url("./../images/logo.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    padding-top: 50px;
+    height: 800px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 200%;
+    font-family: 'Courier New', Courier, monospace; 
+  }
+
+  .form-info{
+    padding-top: 300px;
+  }
+
+  .sign-up-button{
+    width: 50px;
+    height:50px;
+    background-color: #b2ebf2;
+  }
+
+  .log-in-button {
+    width: 50px;
+    height:50px;
+    background-color: #b2ebf2;
+  }
+  .sign-up-button-home{
+    width: 300px;
+    height:100px;
+    background-color: #b2ebf2;
+    margin: 50px;
+    border-radius: 30%;
+    box-shadow: 5px 10px;
+
+  }
+
+    .log-in-button-home {
+      width: 300px;
+      height:100px;
+      background-color: #b2ebf2;
+      margin: 50px;
+      border-radius: 30%;
+      box-shadow: 5px 10px;  
+    }
+
+    .board{
+      height: 100px;
+      width: 100px;
+     border-radius: 50px;
+    }
+
+    .recommend {
+
+      background-color: #b2ebf2;
+      text-align: center;
+      
+
+    }
