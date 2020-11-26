@@ -17,21 +17,21 @@ function Signup (props) {
 <h1>SIGN UP</h1>
       <form action="/auth/signup" method="POST">
 
-      <label>Username: </label>
+      <label >Username: </label>
       <br />
-      <input type="text" name="username" />
+      <input className='input-field' type="text" name="username" />
       <br />
 
 
       <label>Password: </label>
       <br />
-      <input type="password" name="password" />
+      <input className='input-field'  type="password" name="password" />
       <br />
 
 
 
 <label for='level'>Choose Your Level: </label><br />
-      <select id="level" name="level">
+      <select className='input-field'  id="level" name="level">
       <option value="SchoolBoy">'SchoolBoy'</option>
       <option value="Happy Medium">'Happy Medium'</option>
       <option value="Absolute-boss">'Absolute-boss'</option>
@@ -41,7 +41,7 @@ function Signup (props) {
     
  
       <label for='weight'>Choose Your Weight: </label><br />
-      <select id="weight" name="weight">
+      <select className='input-field'  id="weight" name="weight">
       <option value="60-70">60-70</option>
       <option value="70-80">70-80</option>
       <option value="80-90">80-90</option>
@@ -51,7 +51,7 @@ function Signup (props) {
 <br/>
      
 <label for='height'>Choose Your Height: </label><br />
-      <select id="height" name="height">
+      <select className='input-field'  id="height" name="height">
       <option value="I'm above 160">"I'm above 160"</option>
       <option value="I'm above 170">"I'm above 170"</option>
       <option value="I'm above 180">"I'm above 180"</option>

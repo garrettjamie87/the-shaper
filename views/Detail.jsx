@@ -36,14 +36,16 @@ function Detail(props) {
         <li>{props.surfboard.url}</li>
      
       </ol>
-      <form action={`/${props.surfboard._id}`} method="post">
-        <button type="submit">BUY THIS BOARD</button>
-      </form>
-     <br/>
-      <a href="/create">
-        <button type="submit">CREATE YOUR OWN</button>
-      </a>
-
+   {props.user.surfboard.includes(props.surfboard._id) ? null : (
+        <form action={`/${props.surfboard._id}`} method="post">
+          <button type="submit">BUY</button>
+        </form>
+      )}
+      {props.user.surfboard.includes(props.surfboard._id) ? null : (
+        <a href="/create">
+          <button type="submit">CREATE</button>
+        </a>
+      )}
       {/* Delete button should be displayed only for user who created the surfboard... 
       we can check it and creat logic using the ternary operator */}
       {props.user.surfboard.includes(props.surfboard._id) ? (

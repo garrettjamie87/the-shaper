@@ -112,33 +112,36 @@ siteRouter.get("/deletepost/:postId", isLoggedIn, (req, res, next) => {
     .catch((err) => console.log(error));
 });
 
-siteRouter.post("/:id", isLoggedIn, function (req, res, next) {
-  const _id = req.session.currentUser._id;
-  const { id } = req.params;
-
-  User.updateOne(
-    {
-      _id,
-    },
-    {
-      $push: {
-        surfboard: req.params.id,
-      },
-    },
-    {
-      new: true,
+siteRouter.post("/:id", isLoggedIn, async (req, res, next) => {
+  try {
+    const _id = req.session.currentUser._id;
+    const { id } = req.params;
+    const isBuy = await User.findOne({ surfboard: id });
+    if (isBuy) {
+      res.redirect("/dashboard");
+      return;
     }
-  )
-    .then((updatedUser) => {
-      console.log(updatedUser);
-      res.redirect("/order");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    await User.updateOne(
+      {
+        _id,
+      },
+      {
+        $push: {
+          surfboard: req.params.id,
+        },
+      },
+      {
+        new: true,
+      }
+    );
+    //req.session.currentUser = await User.findOne({ _id });
+    res.redirect("/user/profile");
+  } catch (error) {
+    console.log(error);
+    next(error);
+    return;
+  }
 });
-siteRouter.get("/order", (req, res, next) => {
-  res.render("Order");
-});
+
 
 module.exports = siteRouter;

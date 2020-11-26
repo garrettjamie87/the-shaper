@@ -40,11 +40,13 @@ function Dashboard(props) {
         </Row>
       </Container>
 
-      <a href="/auth/logout">LOGOUT</a>
-      <a href="/create">CREATE YOUR OWN</a>
+<div className = 'footer-buttons'>
+      <a className='footer-links' href="/auth/logout">LOGOUT</a>
+      <a className='footer-links' href="/create">CREATE YOUR OWN</a>
       <button>
-        <a href="/user/profile">MY PROFILE</a>
+        <a className ='footer-link' href="/user/profile">MY PROFILE</a>
       </button>
+      </div>
     </Layout>
     </html>
   );
