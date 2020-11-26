@@ -4,7 +4,8 @@ const Layout = require("./Layout");
 function Order() {
   return (
     <Layout title="Home Page">
-      <h1>Order page </h1>
+      <h1>Your Order</h1>
+      
     </Layout>
   );
 }

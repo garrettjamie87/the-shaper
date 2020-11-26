@@ -119,3 +119,20 @@ margin-bottom:100px;
 	align-items: baseline;
 	align-content: center;
 }
+
+.board-img {
+  height: 350px;
+
+}
+
+.create-form {
+  text-align: center;
+}
+
+.create-title {
+  text-align: center;
+}
+
+.my-profile{
+  text-align: center;
+}

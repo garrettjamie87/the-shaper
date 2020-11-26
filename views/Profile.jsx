@@ -3,6 +3,12 @@ const Layout = require("./Layout");
 
 function Profile(props) {
   return (
+   <div className = 'my-profile'>
+   <html lang="en"/>
+    <head>
+      <meta charSet="utf-8" />
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
     <Layout>
       <h1> My Profile </h1>
 
@@ -27,6 +33,7 @@ function Profile(props) {
         <a href="/user/edituser">Edit my profile</a>
       </button>
     </Layout>
+    </div>
   );
 }
 

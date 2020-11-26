@@ -1,14 +1,16 @@
 const React = require("react");
-
-
-
-
+const Layout = require("./Layout");
 
       
-
 function Edituser (props) {
       return(
-         
+            <div className = 'my-profile'>
+            <html lang="en"/>
+             <head>
+               <meta charSet="utf-8" />
+               <link rel="stylesheet" href="/stylesheets/style.css" />
+             </head>
+      <Layout>
           <form action={"/user/edituser"} method="POST">
     
           <label>Username: </label>
@@ -60,7 +62,8 @@ function Edituser (props) {
             }
     
         </form>
-    
+  </Layout>
+  </div>
     )}
             
     

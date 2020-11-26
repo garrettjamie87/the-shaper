@@ -3,12 +3,22 @@ const Layout = require("./Layout");
 
 function Create(props) {
   return (
+<div>
+    <html lang="en"/>
+    <head>
+      <meta charSet="utf-8" />
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
     <Layout>
-      <form action="/create" method="POST">
-        <input type="text" name="name" />
+<h1 className='create-title'>CREATE YOUR OWN BOARD</h1>
+
+      <form className= 'create-form' action="/create" method="POST">
+      <label for="name">name: </label>
+        <input type="text" name="name" /> <br/>
 
         <label for="color">color: </label>
         <select id="color" name="color">
+        <br/>
           <option value="yellow">'yellow'</option>
           <option value="white">'white'</option>
           <option value="black">'black'</option>
@@ -65,6 +75,7 @@ function Create(props) {
         <button type="submit">CREATE</button>
       </form>
     </Layout>
+    </div>
   );
 }
 

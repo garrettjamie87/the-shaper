@@ -17,7 +17,7 @@ function Detail(props) {
       <h1>Detail</h1>
 <Container>
 <Row>
-<Col> <img className="board-img" src="/images/Razor-6ft6-matt-blue-fish.jpg" /></Col>
+<Col> <img className="board" src="/images/Razor-6ft6-matt-blue-fish.jpg" /></Col>
   
   
   <Col>
@@ -37,11 +37,11 @@ function Detail(props) {
      
       </ol>
       <form action={`/${props.surfboard._id}`} method="post">
-        <button type="submit">BUY</button>
+        <button type="submit">BUY THIS BOARD</button>
       </form>
-     
+     <br/>
       <a href="/create">
-        <button type="submit">CREATE</button>
+        <button type="submit">CREATE YOUR OWN</button>
       </a>
 
       {/* Delete button should be displayed only for user who created the surfboard... 
