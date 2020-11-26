@@ -12,6 +12,7 @@ function Signup (props) {
 
 <div className='sign-up-form'>
 <div className='form-info'>
+<img className="logo-one" src="/images/logo-one.png"/>
 
 <h1>SIGN UP</h1>
       <form action="/auth/signup" method="POST">

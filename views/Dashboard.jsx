@@ -6,10 +6,20 @@ import Col from "react-bootstrap/Col";
 
 function Dashboard(props) {
   return (
+    <html lang="en">
+    <head>
+    <meta charSet="utf-8" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
     <Layout>
+      <div className='container-one'>
+      <div>
       <h1>Our Boards</h1>
-      <p>{props.user.username}</p>
-      <p>You have started a new session </p>
+      </div>
+      <div>
+      <p>Hey {props.user.username}</p>
+      </div>
+      </div>
       <Container>
         <Row>
           {props.surfboards.map((el, i) => {
@@ -17,11 +27,12 @@ function Dashboard(props) {
               <Col xs>
                 {" "}
                 <ol key={i}>
-                  <a href={`/detail/${el._id}`}>{el.name}</a>
+                  <a href={`/detail/${el._id}`}>{el.name}
                   <img
                     className="board"
-                    src="images/Razor-6ft6-matt-blue-fish.jpg"
+                    src= {el.url}
                   />
+                  </a>
                 </ol>
               </Col>
             );
@@ -35,6 +46,7 @@ function Dashboard(props) {
         <a href="/user/profile">MY PROFILE</a>
       </button>
     </Layout>
+    </html>
   );
 }
 

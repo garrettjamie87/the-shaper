@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav"
 function NavbarContainer (){
 return (
 
-<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className = "nav-bar">
   <Navbar.Brand href="/dashboard">The-Shaper</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
@@ -13,10 +13,14 @@ return (
           
     </Nav>
     <Nav>
-      <Nav.Link href="/user/Profile">My Profile</Nav.Link>
+      <Nav.Link className='nav-links' href="/user/Profile">Profile</Nav.Link>
       <Nav.Link eventKey={2} href="#memes">
-      <Nav.Link href="/dashboard">Home</Nav.Link>
+      <Nav.Link href="/">Home</Nav.Link>
       </Nav.Link>
+      <Nav.Link href="/auth/login">Login</Nav.Link>
+      <Nav.Link eventKey={2} href="#memes"></Nav.Link>
+      <Nav.Link href="/auth/signup">Sign up</Nav.Link>
+      <Nav.Link eventKey={2} href="#memes"></Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>

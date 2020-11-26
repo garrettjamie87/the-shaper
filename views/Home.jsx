@@ -1,9 +1,10 @@
 const React = require("react");
-
+const Layout = require("./Layout");
 function Home() {
   return (
 
-    <html lang="en">
+    <Layout>
+    <html lang="en"/>
       <head>
         <meta charSet="utf-8" />
         <link rel="stylesheet" href="/stylesheets/style.css" />
@@ -11,19 +12,21 @@ function Home() {
 
 <div className='homepage'>
    <div className='form-info'>
-    <h1>Home Page</h1>
-      
-      <a href="/auth/signup">
-      <button className="sign-up-button-home">Signup</button>
-            </a>
+   <img className="logo" src="/images/logo.png"/>
 
-            <a href="./auth/login">
-      <button className="log-in-button-home">Login</button>
+ 
       
-            </a>
+    
+      
+       
+
+   
+      
+            
             </div>
+
 </div>
-</html>
+</Layout>
   );
 }
 
