@@ -12,8 +12,7 @@ const surfboards = [
        taleShape: "rounded",
        level: "Absolute-boss",
        name: "Juanito",
-       url:"/images/Razor-6ft6-matt-blue-fish.jpg"
-
+       url: "/public/images/Razor-6ft6-matt-blue-fish.jpg"
      },
    
      {

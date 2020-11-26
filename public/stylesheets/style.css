@@ -1,3 +1,8 @@
+body{
+  font-family: 'Courier New', Courier, monospace; 
+
+}
+
 .sign-up-form{
   background-color: rgb(213, 209, 209); 
   background-image: url("./../images/logo.png");
@@ -71,4 +76,19 @@
       background-color: #b2ebf2;
       margin: 50px;
       border-radius: 30%;
-      box-shadow: 5px 10px;    }
+      box-shadow: 5px 10px;  
+    }
+
+    .board{
+      height: 100px;
+      width: 100px;
+     border-radius: 50px;
+    }
+
+    .recommend {
+
+      background-color: #b2ebf2;
+      text-align: center;
+      
+
+    }
