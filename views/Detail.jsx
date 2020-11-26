@@ -17,10 +17,9 @@ function Detail(props) {
       <h1>Detail</h1>
 <Container>
 <Row>
-<Col> <img
-                    className="board"
-                    src="images/Razor-6ft6-matt-blue-fish.jpg"
-                  /></Col>
+<Col> <img className="board-img" src="/images/Razor-6ft6-matt-blue-fish.jpg" /></Col>
+  
+  
   <Col>
 
       <ol>
