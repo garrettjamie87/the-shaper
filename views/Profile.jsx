@@ -30,7 +30,7 @@ function Profile(props) {
             <a href={`/detail/${surfObj._id}`}>
               <li className='board-list'>
                 <p>{surfObj.name}</p>
-                <img className='profile-img' src={surfObj.url} alt="surboard image" />
+               {surfObj.url ? <img className='profile-img' src={surfObj.url}  /> :<img className='board' src="/images/Razor-6ft6-matt-blue-fish.jpg" />} 
               </li>
             </a>
           );
