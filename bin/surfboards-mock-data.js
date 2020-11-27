@@ -12,7 +12,7 @@ const surfboards = [
        taleShape: "square",
        level: "Absolute-boss",
        name: "Juanito",
-       url: "/images/surfboards/tabla1.jpg"
+       url: "images/surfboards/tabla1.jpg"
      },
    
      {
@@ -28,7 +28,7 @@ const surfboards = [
        taleShape: "square",
        level: "Absolute-boss",
        name: "Capi",
-       url: "/images/surfboards/tabla2.png"
+       url: "images/surfboards/tabla2.png"
      },
      {
        author: null,
@@ -180,7 +180,7 @@ const surfboards = [
        taleShape: "rounded",
        level: "SchoolBoy",
        name: "Bigboy",
-       url: "/images/surfboards/tabla12.jpg"
+       url: "/images/surfboards/tabla12.jpg",
      },
    ];
    module.exports = surfboards;
