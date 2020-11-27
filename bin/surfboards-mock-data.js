@@ -12,7 +12,7 @@ const surfboards = [
        taleShape: "square",
        level: "Absolute-boss",
        name: "Juanito",
-       url: "images/surfboards/tabla1.jpg"
+       url: "/images/tabla1.jpg"
      },
    
      {
@@ -28,7 +28,7 @@ const surfboards = [
        taleShape: "square",
        level: "Absolute-boss",
        name: "Capi",
-       url: "images/surfboards/tabla2.png"
+       url: "/images/tabla2.png"
      },
      {
        author: null,
@@ -43,7 +43,7 @@ const surfboards = [
        taleShape: "rounded",
        level: "Absolute-boss",
        name: "Jamie",
-       url: "/images/surfboards/tabla1.jpg"
+       url: "/images/tabla1.jpg"
      },
      {
        author: null,
@@ -58,7 +58,7 @@ const surfboards = [
        taleShape: "rounded",
        level: "Absolute-boss",
        name: "Barceloneta",
-       url: "/images/surfboards/tabla4.jpg"
+       url: "/images/tabla4.jpg"
      },
    
      {
@@ -74,7 +74,7 @@ const surfboards = [
        taleShape: "rounded",
        level: "Happy Medium",
        name: "Lemonboard",
-       url: "/images/surfboards/tabla5.jpg"
+       url: "/images/tabla5.jpg"
      },
      {
        author: null,
@@ -89,7 +89,7 @@ const surfboards = [
        taleShape: "rounded",
        level: "Happy Medium",
        name: "Sergio",
-       url: "/images/surfboards/tabla12.jpg"
+       url: "/images/tabla12.jpg"
      },
      {
        author: null,
@@ -104,7 +104,7 @@ const surfboards = [
        taleShape: "rounded",
        level: "SchoolBoy",
        name: "Thunder",
-       url: "/images/surfboards/tabla12.jpg"
+       url: "/images/tabla12.jpg"
      },
      {
        author: null,
@@ -119,7 +119,7 @@ const surfboards = [
        taleShape: "rounded",
        level: "SchoolBoy",
        name: "Nitro",
-       url: "/images/surfboards/tabla8.jpg"
+       url: "/images/tabla8.jpg"
      },
    
      {
@@ -135,7 +135,7 @@ const surfboards = [
        taleShape: "triangle",
        level: "Absolute-boss",
        name: "Ironboard",
-       url: "/images/surfboards/tabla5.jpg"
+       url: "/images/tabla5.jpg"
      },
      {
        author: null,
@@ -150,7 +150,7 @@ const surfboards = [
        taleShape: "rounded",
        level: "Happy Medium",
        name: "Murphy",
-       url:"/images/surfboards/tabla2.png"
+       url:"/images/tabla2.png"
      },
      {
        author: null,
@@ -165,7 +165,7 @@ const surfboards = [
        taleShape: "rounded",
        level: "SchoolBoy",
        name: "Monster",
-       url: "/images/surfboards/tabla11.jpg"
+       url: "/images/tabla11.jpg"
      },
      {
        author: null,
@@ -180,7 +180,7 @@ const surfboards = [
        taleShape: "rounded",
        level: "SchoolBoy",
        name: "Bigboy",
-       url: "/images/surfboards/tabla12.jpg",
+       url: "/images/tabla12.jpg",
      },
    ];
    module.exports = surfboards;
